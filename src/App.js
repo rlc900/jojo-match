@@ -14,27 +14,38 @@ function App() {
   }
 
   return (
-    <div className="App">
-        <h1>
-          Learn React
-        </h1>
+  
+        
         <ReactCardFlip isFlipped={isFlipped} flipDirection="vertical">
-        <FrontCard>
-          Front of Card
-        <button onClick={handleClick}>Click to flip</button>
+        <FrontCard onClick={handleClick}>
+          <Logo src='./images/jojo.png'/>
+        
         </FrontCard>
-        <BackCard>
-          Back of Card
-        <button onClick={handleClick}>Click to flip</button>
+        <BackCard onClick={handleClick}>
+          <Character src='./images/jojo_pony.png' alt='Zaddy'/>
         </BackCard>
 
         </ReactCardFlip>
-    </div>
+
   );
 }
 
 export default App;
 
-const FrontCard = styled.div``
+const FrontCard = styled.div`
+  height: 100px;
+`
 
-const BackCard = styled.div``
+const BackCard = styled.div`
+height: 100px;
+`
+
+const Character = styled.img`
+height: 100px;
+width: 100px;
+`
+
+const Logo = styled.img`
+height: 100px;
+width: 100px;
+`
