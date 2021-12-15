@@ -49,13 +49,11 @@ function Card() {
       <div>
       {jojoArr.map((jojo) => {
         return (
-          <ReactCardFlip isFlipped={isFlipped} flipDirection="vertical" key={jojo.id}>
           <CardContainer onClick={handleClick}>
           
           <Character src={jojo.img} alt='Jojo'/>
        
           </CardContainer>
-      </ReactCardFlip>
         )
         
       })}
