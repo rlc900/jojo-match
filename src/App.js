@@ -25,8 +25,17 @@ const jojoArr = [
 ]
 
 function App() {
+
 const [cards, setCards] = useState([])
 const [turns, setTurns] = useState(0)
+
+const [choiceOne, setChoiceOne] = useState(null)
+const [choiceTwo, setChoiceTwo] = useState(null)
+
+const handleChoice = (card) => {
+    choiceOne ? setChoiceTwo(card) : setChoiceOne(card)
+  }
+
 
   // shuffle cards
   const shuffleCards = () => {
@@ -47,7 +56,11 @@ const [turns, setTurns] = useState(0)
 
       <div className='card-grid'>
       {cards.map(card => (
-        <Card card={card} key={card.id}/>
+        <Card 
+        card={card} 
+        key={card.id}
+        handleChoice={handleChoice}
+        />
       ))}
       </div>
     </div>
