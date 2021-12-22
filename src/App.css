@@ -19,5 +19,22 @@ button:hover {
   color: #fff;
 }
 
+.card-grid {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 20px;
+}
+
+.front {
+  height: 100px;
+  width: 100px;
+}
+
+.back {
+  height: 100px;
+  width: 100px;
+}
+
 
 

@@ -42,10 +42,9 @@ const [turns, setTurns] = useState(0)
 
   return (
     <div>
-      <button onClick={shuffleCards}>
-        New Game
-      </button>
-      <Card/>
+      <h1>Jojo Match</h1>
+      <button onClick={shuffleCards}> New Game </button>
+      <Card cards={cards}/>
       </div>
   );
 }
