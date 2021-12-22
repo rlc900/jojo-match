@@ -44,8 +44,13 @@ const [turns, setTurns] = useState(0)
     <div>
       <h1>Jojo Match</h1>
       <button onClick={shuffleCards}> New Game </button>
-      <Card cards={cards}/>
+
+      <div className='card-grid'>
+      {cards.map(card => (
+        <Card card={card} key={card.id}/>
+      ))}
       </div>
+    </div>
   );
 }
 
