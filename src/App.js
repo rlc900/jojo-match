@@ -71,6 +71,8 @@ const handleChoice = (card) => {
     .sort(() => Math.random() - 0.5)
     .map((card) => ({...card, id: Math.random()}));
 
+    setChoiceOne(null)
+    setChoiceTwo(null)
     setCards(shuffledCards)
     setTurns(0)
   }
@@ -83,6 +85,10 @@ const handleChoice = (card) => {
   }
 
   // console.log(cards)
+
+  useEffect(() => {
+    shuffleCards()
+  }, [])
 
   return (
     <div>
@@ -100,6 +106,7 @@ const handleChoice = (card) => {
         />
       ))}
       </div>
+      <p>Turns: {turns}</p>
     </div>
   );
 }
