@@ -9,12 +9,21 @@
     border-radius: 6px;
 }
 
-/* .front {
-    height: 100%;
-    width: 100%;
+.card .front {
+    transform: rotateY(90deg);
+    position: absolute;
 }
 
-.back {
+.flipped .front {
+    transform: rotateY(0deg); 
+}
+
+ /* .front {
+    height: 100%;
+    width: 100%;
+} */
+
+/* .back {
     height: 100px;
     width: 100px;
-} */
+}  */

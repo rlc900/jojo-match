@@ -4,7 +4,7 @@ import './Card.css'
 // import ReactCardFlip from 'react-card-flip';
 
 
-function Card({card, handleChoice}) {
+function Card({card, handleChoice, flipped}) {
 
   const handleClick = () => {
     handleChoice(card)
@@ -12,7 +12,7 @@ function Card({card, handleChoice}) {
 
     return (
           <div className='card'>
-            <div>
+            <div className={flipped ? "flipped" : ""}>
               <img 
                 className='front' 
                 src={card.img} 

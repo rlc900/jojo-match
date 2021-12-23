@@ -58,7 +58,7 @@ const handleChoice = (card) => {
         })
         resetTurn()
       } else {
-        resetTurn()
+        setTimeout(() => resetTurn(), 1000)
       }
     }
   }, [choiceOne, choiceTwo])
@@ -79,7 +79,7 @@ const handleChoice = (card) => {
     setTurns(prevTurns => prevTurns + 1)
   }
 
-  console.log(cards)
+  // console.log(cards)
 
   return (
     <div>
@@ -92,6 +92,7 @@ const handleChoice = (card) => {
         card={card} 
         key={card.id}
         handleChoice={handleChoice}
+        flipped={card === choiceOne || card === choiceTwo || card.matched}
         />
       ))}
       </div>
