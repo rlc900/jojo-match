@@ -5,7 +5,7 @@ import Card from './Components/Card';
 
 const jojoArr = [
   {
-    img: './images/jojo_pony.png', 
+    img: './images/jotaro.png', 
     matched: false
   },
   {
@@ -26,6 +26,26 @@ const jojoArr = [
   },
   {
     img: './images/jolyne.png', 
+    matched: false
+  },
+  {
+    img: './images/avdol.png', 
+    matched: false
+  },
+  {
+    img: './images/iggy.png', 
+    matched: false
+  },
+  {
+    img: './images/kakyoin.png', 
+    matched: false
+  },
+  {
+    img: './images/polnareff.png', 
+    matched: false
+  },
+  {
+    img: './images/dio.png', 
     matched: false
   }
 ]

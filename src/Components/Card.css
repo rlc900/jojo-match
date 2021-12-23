@@ -3,7 +3,8 @@
 }
 
 .card img {
-    width: 200px;
+    width: 300px;
+    height: 200px;
     display: block;
     border: 2px solid #fff;
     border-radius: 6px;
