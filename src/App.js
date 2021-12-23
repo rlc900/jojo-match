@@ -1,6 +1,6 @@
 // import styled from 'styled-components'
 import './App.css';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Card from './Components/Card';
 
 const jojoArr = [
@@ -36,6 +36,17 @@ const handleChoice = (card) => {
     choiceOne ? setChoiceTwo(card) : setChoiceOne(card)
   }
 
+  useEffect(() => {
+    if (choiceOne && choiceTwo) {
+      if (choiceOne.img === choiceTwo.img) {
+        console.log('We match!')
+        resetTurn()
+      } else {
+        console.log('We do not match :/')
+        resetTurn()
+      }
+    }
+  }, [choiceOne, choiceTwo])
 
   // shuffle cards
   const shuffleCards = () => {
@@ -47,7 +58,13 @@ const handleChoice = (card) => {
     setTurns(0)
   }
 
-  console.log(cards, turns)
+  const resetTurn = () => {
+    setChoiceOne(null)
+    setChoiceTwo(null)
+    setTurns(prevTurns => prevTurns + 1)
+  }
+
+  // console.log(cards, turns)
 
   return (
     <div>
