@@ -5,22 +5,28 @@ import Card from './Components/Card';
 
 const jojoArr = [
   {
-    img: './images/jojo_pony.png'
+    img: './images/jojo_pony.png', 
+    matched: false
   },
   {
-    img: './images/jonathan.png'
+    img: './images/jonathan.png', 
+    matched: false
   },
   {
-    img: './images/joseph.png'
+    img: './images/joseph.png', 
+    matched: false
   },
   {
-    img: './images/josuke.png'
+    img: './images/josuke.png', 
+    matched: false
   },
   {
-    img: './images/giorno.png'
+    img: './images/giorno.png', 
+    matched: false
   },
   {
-    img: './images/jolyne.png'
+    img: './images/jolyne.png', 
+    matched: false
   }
 ]
 
@@ -36,19 +42,28 @@ const handleChoice = (card) => {
     choiceOne ? setChoiceTwo(card) : setChoiceOne(card)
   }
 
+  // this compares selected cards
   useEffect(() => {
     if (choiceOne && choiceTwo) {
+
       if (choiceOne.img === choiceTwo.img) {
-        console.log('We match!')
+        setCards(prevCards => {
+          return prevCards.map(card => {
+            if (card.img === choiceOne.img) {
+              return {...card, matched: true}
+            } else {
+              return card
+            }
+          })
+        })
         resetTurn()
       } else {
-        console.log('We do not match :/')
         resetTurn()
       }
     }
   }, [choiceOne, choiceTwo])
 
-  // shuffle cards
+  // responsible for shuffling cards
   const shuffleCards = () => {
     const shuffledCards = [...jojoArr, ...jojoArr]
     .sort(() => Math.random() - 0.5)
@@ -64,7 +79,7 @@ const handleChoice = (card) => {
     setTurns(prevTurns => prevTurns + 1)
   }
 
-  // console.log(cards, turns)
+  console.log(cards)
 
   return (
     <div>
