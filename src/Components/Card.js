@@ -15,16 +15,16 @@ function Card({card, handleChoice, flipped, disabled}) {
     return (
           <div className='card'>
             <div className={flipped ? "flipped" : ""}>
-              <img 
-                className='front' 
-                src={card.img} 
-                alt='card front'
-              />
-              <img 
+            <img 
                 className='back' 
+                src={card.img} 
+                alt='card back'
+              />
+            <img 
+                className='front' 
                 src='./images/jojo.png' 
                 onClick={handleClick}
-                alt='card back'
+                alt='card front'
               />
             </div>
           </div>
