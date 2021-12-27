@@ -2,51 +2,63 @@
 import './App.css';
 import React, { useState, useEffect } from 'react';
 import Card from './Components/Card';
+import Header from './Components/Header'
 
 const jojoArr = [
   {
     img: './images/jotaro.png', 
-    matched: false
+    matched: false,
+    part: 3
   },
   {
     img: './images/jonathan.png', 
-    matched: false
+    matched: false,
+    part: 1
   },
   {
-    img: './images/joseph.png', 
-    matched: false
+    img: './images/joseph3.png', 
+    matched: false,
+    part: 3
   },
   {
     img: './images/josuke.png', 
-    matched: false
+    matched: false,
+    part: 4
   },
   {
     img: './images/giorno.png', 
-    matched: false
+    matched: false,
+    part: 5
   },
   {
     img: './images/jolyne.png', 
-    matched: false
+    matched: false,
+    part: 6
   },
   {
     img: './images/avdol.png', 
-    matched: false
+    matched: false,
+    part: 3
   },
   {
     img: './images/iggy.png', 
-    matched: false
+    matched: false,
+    part: 3
   },
   {
     img: './images/kakyoin.png', 
-    matched: false
+    matched: false,
+    part: 3
   },
   {
     img: './images/polnareff.png', 
-    matched: false
+    matched: false,
+    part: 3
   },
   {
     img: './images/dio.png', 
-    matched: false
+    matched: false,
+    part: 3
   }
 ]
 
@@ -114,7 +126,7 @@ const handleChoice = (card) => {
     <div>
       <h1>Jojo Match</h1>
       <button onClick={shuffleCards}> New Game </button>
-
+      <Header/>
       <div className='card-grid'>
       {cards.map(card => (
         <Card 
